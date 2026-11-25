@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+:root {
+  --bg-obsidian: #06070a;
+  --bg-surface: #0d1016;
+  --bg-elevated: #131822;
+  --accent-gold: #c9a46b;
+  --accent-gold-light: #e7cca0;
+  --accent-gold-dark: #8e6e3e;
+  --text-alabaster: #f5f2eb;
+  --text-titanium: #9aa2b2;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-obsidian);
+  color: var(--text-alabaster);
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-alabaster);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(201, 164, 107, 0.32);
+  color: #f5f2eb;
+}
+
+/* Luxury architectural hairline grid backdrop */
+.studio-grid-bg {
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Soft brushed champagne metallic text */
+.text-gold-gradient {
+  background: linear-gradient(
+    135deg,
+    #f3dfb9 0%,
+    #c9a46b 45%,
+    #a58149 75%,
+    #ecd5ab 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Refined glass surface */
+.glass-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(19, 24, 34, 0.78) 0%,
+    rgba(11, 14, 20, 0.88) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(
+    180deg,
+    rgba(24, 21, 17, 0.85) 0%,
+    rgba(11, 13, 18, 0.92) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(201, 164, 107, 0.28);
+}
+
+/* Subtle PPF shield shimmer animation */
+@keyframes ppfPulse {
+  0%,
+  100% {
+    opacity: 0.48;
+  }
+  50% {
+    opacity: 0.88;
+  }
+}
+
+.animate-ppf-shield {
+  animation: ppfPulse 3.4s ease-in-out infinite;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmerSweep 4.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06070a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232936;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a46b;
+}
